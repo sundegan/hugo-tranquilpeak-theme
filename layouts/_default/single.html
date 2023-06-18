@@ -23,8 +23,12 @@
           {{ partial "post/gallery.html" . }}
         </div>
         <div id="post-toc">
-          {{ partial "toc.html" . }}
+          {{ partial "post/toc.html" . }}
         </div>
+      </div>
+      <!--  文章尾部增加相关文章推荐 -->
+      <div class="post-end">
+        {{ partial "post/end.html" . }}
       </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">

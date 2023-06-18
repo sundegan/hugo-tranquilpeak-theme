@@ -1,0 +1,10 @@
+{{ if .Site.RegularPages.Related . }}
+<h2>See Also</h2>
+<ul>
+    {{ range .Site.RegularPages.Related . | first 5 }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
