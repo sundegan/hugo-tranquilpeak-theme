@@ -1,0 +1,22 @@
+<footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021-{{ now.Format "2006" }} {{ with .Site.Params.footer.copyright }}{{ . | safeHTML }}{{ else }}{{ with .Site.Author.name }}{{ . }}{{ else }}{{ with .Site.Title }}{{ . }}{{ end }}{{ end }}{{ end }}. {{ i18n "footer.all_rights_reserved" }}
+  </span>
+  <div>
+    <div class="github-badge">
+      <a href="https://gohugo.io" target="_blank" rel="nofollow">
+        <span class="badge-subject">Powered by</span><span class="badge-value badge-blue">Hugo</span>
+      </a>
+    </div>
+    <div class="github-badge">
+      <a href="https://sundegan.github.io" target="_blank">
+        <span class="badge-subject">Design by</span><span class="badge-value badge-green">孙德淦</span>
+      </a>
+    </div>
+    <div class="github-badge">
+      <a href="https://github.com/sundegan/hugo-tranquilpeak-theme" target="_blank">
+        <span class="badge-subject">Theme</span><span class="badge-value badge-yellowgreen">Tranquilpeak</span>
+      </a>
+    </div>
+  </div>
+</footer>
