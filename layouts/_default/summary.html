@@ -16,6 +16,14 @@
           {{ else }}
             {{ .Scratch.Set "thumbnailImage" (path.Join .RelPermalink .Params.coverImage) }}
           {{ end }}
+        {{ else }}
+          <!-- 新增代码：从文章内容中提取第一张图片 -->
+          {{ range (findRE "<img[^>]+src=\"([^\"]+)\"" .Content 1) }}
+            {{ $src := index (findRE "src=\"([^\"]+)" . 1) 0 }}
+            {{ $src := replaceRE "src=\"" "" $src }}
+            {{ $.Scratch.Set "thumbnailImage" $src }}
+            {{ break }}
+          {{ end }}
         {{ end }}
       {{ end }}
     {{ end }}

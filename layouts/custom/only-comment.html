@@ -10,46 +10,22 @@
   {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
   {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
   <article class="post" id="top">
-    <div id="post-margin">
+    <div id="custom-about-margin">
       {{ with .Params.covercaption }}
       <span class="post-header-cover-caption caption">{{ . | markdownify }}</span>
       {{ end }}
       {{ if or (not .Params.coverimage) (eq .Params.covermeta "out") }}
-      {{ partial "post/header.html" . }}
+      {{ partial "post/header-nometa.html" . }}
       {{ end }}
       <div class="post-content markdown">
         <div id="main-content">
           {{ .Content }}
           {{ partial "post/gallery.html" . }}
         </div>
-        <!--  文章尾部增加相关文章推荐 -->
-        <div id="post-end">
-          {{ partial "post/end.html" . }}
-        </div>
       </div>
       <div id="post-footer" class="post-footer">
-        {{ if (not (eq .Params.showTags false)) }}
-        {{ with .Params.tags }}
-        {{ $tagsLength := len . }}
-        {{ if gt $tagsLength 0 }}
-        <div class="post-footer-tags">
-          <span class="text-color-light text-small">{{ i18n "post.tagged_in" }}</span><br/>
-          {{ partial "post/tag.html" $ }}
-        </div>
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        {{ partial "post/actions.html" . }}
         {{ partial "post/comment.html" . }}
       </div>
-    </div>
-    <!-- 侧边文章目录 -->
-    <div id="post-toc">
-      <div id="toc-btn">
-        <i class="fas fa-times icon-times"></i>
-        <i class="fas fa-bars icon-bars" style="display: none;"></i>
-      </div>
-      {{ .Page.TableOfContents }}
     </div>
   </article>
   {{ partial "footer.html" . }}
@@ -57,6 +33,5 @@
 <div id="bottom-bar" class="post-bottom-bar" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
 {{ partial "post/actions.html" . }}
 </div>
-{{ partial "post/share-options.html" . }}
 </div>
 {{ partial "foot.html" . }}

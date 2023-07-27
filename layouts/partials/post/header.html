@@ -1,4 +1,4 @@
-<div class="post-header main-content-wrap {{ if $.Params.metaalignment }}text-{{ $.Params.metaalignment }}{{ else }}text-left{{ end }}">
+<div class="post-header {{ if $.Params.metaalignment }}text-{{ $.Params.metaalignment }}{{ else }}text-left{{ end }}">
   {{ with $.Params.link }}
     <h1 itemprop="headline"> 
       <a class="link" href="{{ . | absURL }}" target="_blank" rel="noopener" aria-label="{{ i18n "global.open_link"}}: {{ . | absURL }}">

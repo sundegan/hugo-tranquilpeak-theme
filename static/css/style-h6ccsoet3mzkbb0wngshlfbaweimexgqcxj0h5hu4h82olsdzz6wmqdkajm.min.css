@@ -18,8 +18,8 @@
 html {
 	width: 100%;
 	height: 100%;
-	/*font-family: "Open Sans", sans-serif;*/
-	font-family: system-ui,-apple-system,BlinkMacSystemFont,PingFang SC,Microsoft YaHei UI,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;;
+	font-family: "Iowan Old Style", "Ovo", "Hoefler Text", Georgia, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif;
+	/*font-family: Arial, Helvetica, sans-serif;*/
 	font-size: 10px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -34,7 +34,6 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #fff;
-	font-family: "Open Sans", sans-serif;
 	font-size: 1.6rem;
 	line-height: 1.9em;
 	letter-spacing: .01em;
@@ -53,7 +52,7 @@ h4,
 h5,
 h6 {
 	letter-spacing: -.04em;
-	font-family: "Open Sans", sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 700;
 	line-height: 1.45em;
 	color: #4a4a4a
@@ -62,13 +61,13 @@ h6 {
 h1,
 h2,
 h3 {
-	margin: 1em 0 1em 0
+	margin: 0.5em 0
 }
 
 h4,
 h5,
 h6 {
-	margin: 1em 0 .5em 0
+	margin: 0.7em 0
 }
 
 h1 {
@@ -96,13 +95,13 @@ h6 {
 }
 
 p {
-	margin: 0 0 1.5em 0
+	margin: 0 0 0.5em 0
 }
 
 dl,
 ol,
 ul {
-	margin: 0 0 .5em 0
+	margin: 0.25em 0 0.25em 0
 }
 
 a,
@@ -111,7 +110,7 @@ a:hover,
 a:visited {
 	cursor: pointer;
 	color: #349ef3;
-	text-decoration: none
+	text-decoration: none !important;
 }
 
 a:hover {
@@ -172,18 +171,19 @@ pre>code {
 
 code {
 	font-size: 1.5rem;
-	display: inline-block;
+	display: inline;
 	font-family: Menlo, Consolas, monospace;
 	font-weight: 400;
-	background-color: #f7f8f8;
-	padding: 0 10px
+	background: #f8f8f8;
+	padding: 2px 5px;
+	border: 1px solid #ddd;
 }
 
 blockquote {
-	border-left: 3px solid #5d686f;
-	padding: 0 15px;
-	font-style: italic;
-	margin: 1.5em 0 0
+	border-left: 3px solid #34a986;
+	padding: 0 10px;
+	margin: 0.5em 0;
+	background-color: #eae7e7;
 }
 
 blockquote cite:before {
@@ -744,9 +744,11 @@ pre.code-highlight>code {
 	color: #9eabb3;
 	font-size: 1.5rem;
 	text-align: center;
+	margin: auto;
 	margin-top: 70px;
+	max-width: 900px;
+	padding-bottom: 30px;
 	height: auto;
-	padding: 20px 20px
 }
 
 #header {
@@ -955,36 +957,9 @@ pre.code-highlight>code {
 	-webkit-transition: -webkit-transform .25s ease-in-out
 }
 
-.content-toc {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-}
-
 #main-content {
-	max-width: 750px;
+	width: 100%;
 	margin: 0 auto;
-	padding-right: 20px;
-	padding-left: 20px;
-}
-
-#post-toc {
-	max-width: 250px;
-	max-height: 600px;
-	border-left: 4px solid #f0f0f0;
-	position: fixed; /* 使#post-toc始终显示在页面的可视范围内 */
-	margin-left: 1050px; /* 根据#main-content的宽度占比，将#post-toc定位在#main-content的右侧；可以根据需要自定义比例 */
-	top: 100px; /* 距离顶部的位置 */
-	font-family: Athelas,STHeiti,Microsoft Yahei,serif;
-	border-radius: 5px;
-	background: rgba(248,245,236,.6);
-	box-shadow: 1px 1px 2px rgba(0,0,0,.125);
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	box-sizing: border-box;
-	overflow-y: auto; /*在元素的内容超出垂直容量时，显示一个垂直滚动条*/
-	overflow-x: hidden;
 }
 
 #toc-title {
@@ -997,11 +972,6 @@ pre.code-highlight>code {
 
 #TableOfContents {
 	font-size: 15px; /* 目录字体大小 */
-}
-
-#TableOfContents ul {
-	padding-left: 25px;
-	margin: 0px;
 }
 
 #main.hasCover.hasCoverCaption,
@@ -2247,9 +2217,9 @@ pre.code-highlight>code {
 	text-align: left;
 	padding: 10px 15px;
 	min-height: 30px;
-	margin: 1em 0 0;
+	margin: 0.5em 0 0;
 	border: none;
-	border-left: 3px solid;
+	border-left: 5px solid;
 	word-break: break-word
 }
 
@@ -2262,13 +2232,13 @@ pre.code-highlight>code {
 }
 
 .alert:not(.no-icon) {
-	padding-left: 55px
+	padding-left: 40px
 }
 
 .alert:not(.no-icon):before {
 	position: absolute;
 	top: 10px;
-	left: 15px;
+	left: 10px;
 	font-family: "Font Awesome 5 Free";
 	font-weight: 600;
 	font-size: 2rem
@@ -2452,17 +2422,17 @@ pre.code-highlight>code {
 
 .codeblock,
 figure.highlight {
-	margin: 10px 0;
+	margin: 0px 0px;
 	line-height: 2.3rem;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	overflow: hidden
 }
 
 .codeblock table,
 figure.highlight table {
 	display: block;
-	width: 100%
+	width: 100%;
 }
 
 .codeblock .code,
@@ -2496,7 +2466,7 @@ figure.highlight.plain .gutter {
 .codeblock figcaption,
 figure.highlight figcaption {
 	font-size: 1.3rem;
-	padding: 0 15px 20px;
+	padding: 0 15px 7px;
 	margin: 0
 }
 
@@ -2507,10 +2477,12 @@ figure.highlight figcaption a {
 
 .codeblock .gutter,
 figure.highlight .gutter {
-	border-right: 1px solid;
-	padding: .3rem 15px;
+	border-right: 2px solid;
+	padding-right: 10px;
+	padding-left: 10px;
 	line-height: 2.3rem;
-	font-size: 1.4rem
+	font-size: 1.4rem;
+	text-align: right;
 }
 
 .codeblock .gutter pre,
@@ -2520,7 +2492,7 @@ figure.highlight .gutter pre {
 
 .codeblock .code,
 figure.highlight .code {
-	padding: .3rem 15px .3rem 1em;
+	padding: .3rem 1rem;
 	width: 100%
 }
 
@@ -2545,10 +2517,10 @@ figure.highlight .line {
 	padding-bottom: 0
 }
 
-.codeblock--tabbed figcaption a,
-.codeblock--tabbed figcaption span {
-	float: left !important
-}
+/*.codeblock--tabbed figcaption a,*/
+/*.codeblock--tabbed figcaption span {*/
+/*	float: left !important*/
+/*}*/
 
 .codeblock--tabbed figcaption .tabs {
 	float: right
@@ -3179,7 +3151,6 @@ a.fancybox {
 .post .post-content {
 	text-rendering: optimizelegibility;
 	letter-spacing: -.3px;
-	font-family: Merriweather, serif;
 	color: #5d686f;
 	margin-top: 20px;
 	font-weight: 400;
@@ -3196,7 +3167,7 @@ a.fancybox {
 }
 
 .post .post-content :not(blockquote):not(li):not(.alert)>p {
-	margin: 1.5em 0 0 0
+	margin: 0.5em 0 0.5em 0
 }
 
 .post .post-content li p {
@@ -3204,7 +3175,10 @@ a.fancybox {
 }
 
 .post .post-footer {
-	margin-top: 20px
+	display: block;
+	max-width: 900px;
+	margin: 0 auto;
+	margin-top: 20px;
 }
 
 .post .post-footer-tags {
@@ -3388,13 +3362,13 @@ a.fancybox {
 .pullquote.left {
 	width: 45%;
 	float: left;
-	margin: 1.5em 35px 1.5em 0
+	margin: 0.5em 20px 0.5em 0
 }
 
 .pullquote.right {
 	width: 45%;
 	float: right;
-	margin: 1.5em 0 1.5em 35px
+	margin: 0.5em 0 0.5em 20px
 }
 
 .pullquote.blur {
@@ -4365,10 +4339,6 @@ pre>code.codeblock {
 	overflow-x: auto
 }
 
-code {
-	background-color: #f7f8f8
-}
-
 .codeblock--tabbed figcaption .tab.active {
 	background: #349ef3;
 	color: #fff
@@ -4376,20 +4346,20 @@ code {
 
 .codeblock,
 figure.highlight {
-	background: #f7f8f8;
-	color: #333
+	background: #f5f2f0;
+	color: black;
 }
 
 .codeblock figcaption,
 figure.highlight figcaption {
-	background: #f7f8f8;
-	color: #999
+	background: #f5f2f0;
+	color: black;
 }
 
 .codeblock .gutter,
 figure.highlight .gutter {
-	background: #f7f8f8;
-	border-right-color: #e6e6e6
+	background: #f5f2f0;
+	border-right-color: #aaa;
 }
 
 .codeblock .gutter .line,
@@ -5184,32 +5154,7 @@ figure.highlight.yml .number {
 	color: #0086b3
 }
 
-/*修改目录样式*/
-#TableOfContents a,
-#TableOfContents a::before,
-#TableOfContents a::after {
-	text-decoration: none; /*去掉下划线*/
-	color: #161209; /*设置链接颜色*/
-}
-
-#TableOfContents a:hover {
-	color: #e59c00; /*鼠标悬停在链接上时修改链接颜色*/
-}
-
-/*将目录的小圆点换成蓝色竖杆*/
-#toc #TableOfContents ul a:first-child::before {
-	content: "|";
-	font-weight: bold;
-	margin-right: 0.5rem;
-	color: #2d96bd;
-}
-
-/*去除目录的小圆点*/
-#toc #TableOfContents ul {
-	list-style-type: none;
-}
-
-/*顶部阅读进度条*/
+/* 顶部阅读进度条 */
 #top-scroll-bar {
 	position: fixed;
 	top: 0;
@@ -5221,7 +5166,7 @@ figure.highlight.yml .number {
 	transition: width 0.25s ease-in-out;
 }
 
-/*页脚标签*/
+/* 页脚标签 */
 .github-badge {
 	display: inline-block;
 	border-radius: 4px;
@@ -5264,17 +5209,6 @@ figure.highlight.yml .number {
 	background-color: #a4a61d!important;
 }
 
-/*文章尾部，相关文章推荐*/
-.post-end {
-	font-size: 17px;
-	line-height: 2;
-	padding-bottom: 0.8em;
-	max-width: 750px;
-	margin: 0 auto;
-	padding-right: 20px;
-	padding-left: 20px;
-}
-
 .post-end h2 {
 	margin: 1em 0 0.2em 0;
 }
@@ -5284,3 +5218,240 @@ figure.highlight.yml .number {
 	text-decoration: none;
 	font-family: iowan old style,ovo,hoefler text,Georgia,times new roman,tibch,source han sans,pingfangsc-regular,hiragino sans gb,stheiti,microsoft yahei,droid sans fallback,wenquanyi micro hei,sans-serif;
 }
+
+/* 使无序列表左边间距小一点，尽量和正文对齐 */
+ul {
+	padding-inline-start: 20px;
+}
+
+ul ul {
+	padding-inline-start: 15px;
+}
+
+/* 使有序列表左边间距小一点，尽量和正文对齐 */
+ol {
+	padding-inline-start: 5px;
+	counter-reset: list-counter;
+	list-style-type: none;
+}
+
+ol li {
+	position: relative;
+	padding-left: 20px; /* 调整此值以增加或减少有序列表数字和文字的距离 */
+}
+
+/* 修改有序列表的数字的字体样式 */
+ol > li::before {
+	content: counter(list-counter) ". ";
+	counter-increment: list-counter;
+	font-family: DIN Condense, DIN Alternate;
+	position: absolute;
+	left: 0;
+}
+
+ol li ul li {
+	padding-left: 0px;
+}
+
+/* 给链接增加灰色下划线 */
+#main-content a {
+	color: #0789e0;
+	border-bottom: 2px solid #ddd;
+}
+
+.post-end a {
+	color: #0789e0;
+	border-bottom: 2px solid #ddd;
+}
+
+/* 一句话介绍自己 */
+.author-slogan {
+	font-size: 0.8em; /* 调整此值以设置字体大小 */
+}
+
+/* 控制整个post的宽度和边缘间距 */
+#post-margin {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+/* 侧边目录样式 */
+#post-toc {
+	position: fixed;
+	top: 50%;
+	right: 30px;
+	transform: translateY(-60%);
+}
+
+#post-toc li {
+	padding-left: 10px;
+	line-height: 1.3;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #000;
+	border-radius: 10px;
+}
+
+/*次级目录不要有内边距*/
+#post-toc li ul {
+	padding: 0;
+}
+
+#post-toc a {
+	padding-left: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	display: inline-block;
+	width: 150px;
+	border-radius: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: Arial;
+	color: #6E7173;
+	font-family: Arial;
+}
+
+/*去除小圆点*/
+#post-toc #TableOfContents ul,
+#post-toc #TableOfContents ul ul {
+	list-style: none;
+}
+
+/*二级目录链接*/
+#post-toc li ul a {
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 13px;
+}
+
+#post-toc #TableOfContents > ul {
+	height: 400px; /* 设置目录的最大高度 */
+	width: 180px; /* 设置目录的宽度 */
+	padding: 10px 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid lightgray;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 5px 10px 5px lightslategray;
+}
+
+/*鼠标悬停在目录链接上的样式*/
+#post-toc #TableOfContents a:hover {
+	background-color: rgb(44, 136, 194); /* 设置背景颜色 */
+	color: white; /* 设置文本颜色 */
+}
+
+/*监听滚动，自动高亮对应目录*/
+#post-toc #TableOfContents a.active {
+	background-color: rgb(44, 136, 194); /* 设置背景颜色 */
+	color: white; /* 设置文本颜色 */
+}
+
+/*目录折叠展开*/
+#post-toc #TableOfContents.hidden {
+	display: none;
+}
+
+#toc-btn {
+	padding-left: 10px;
+}
+
+/*修改标题样式*/
+#main-content h1 {
+	font-size: 2.8rem;
+	text-align: center;
+	color: black;
+	background: linear-gradient(#fff 50%, #bf98c5 50%);
+}
+
+#main-content h1 {
+	color: #4e63c2;
+}
+
+#main-content h2,
+#main-content h3 {
+	color: #bf98c5;
+}
+
+
+#main-content h2 {
+	border-left: 4px solid #bf98c5;
+	padding-left: 6px;
+	display: block;
+	font-size: 2.4rem;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+#main-content h3 {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+#main-content h1,
+#main-content h2,
+#main-content h3 {
+	margin: 1.4em 0 1.1em;
+	overflow: hidden;
+}
+
+/* 控制自定义页面about的宽度和边缘距离 */
+#custom-about-margin {
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+/* 针对手机端的目录样式调整 */
+@media only screen and (max-width: 767px) {
+	#post-toc {
+		top: 50%;
+		right: 1rem;
+		max-height: calc(100% - 2rem);
+		overflow-y: auto;
+		transform: translateY(-60%);
+	}
+
+	#post-margin {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+
+	#custom-about-margin {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+}
+
+/* 平板端 */
+@media only screen and (min-width :768px) and (max-width :1279px) {
+	#post-toc {
+		top: 50%;
+		right: 1rem;
+		max-height: calc(100% - 2rem);
+		overflow-y: auto;
+		transform: translateY(-60%);
+	}
+
+	#post-margin {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+
+	#custom-about-margin {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+}
+
+

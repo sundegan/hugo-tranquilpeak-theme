@@ -25,14 +25,21 @@
 <html lang="{{ .Site.LanguageCode }}">
   <head>
     <!--  SEO优化(将关键字也加入title和描述)  -->
-    <title>{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}, {{ with .Keywords }}{{ delimit . ", " }}{{ end }}</title>
+    <title>{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}{{ with .Keywords }}, {{ delimit . ", " }}{{ end }}</title>
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ else }}{{ .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}关键词: {{ with .Keywords }}{{ delimit . ", " }}{{ end }}">
     {{ partial "head_start.html" . }}
     {{ partial "schema.html" . }}
     {{ partial "meta.html" . }}
 
-    <link rel="icon" href="{{ with .Site.Params.favicon }}{{ . | absURL }}{{ else }}/favicon.png{{ end }}">
+  <!--  设置多种不同大小网站图标  -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="images/favicon-32x32.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
+    <link rel="manifest" href="/images/site.webmanifest">
     {{ with .OutputFormats.Get "RSS" }}
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .RelPermalink }}">
     {{ end }}
